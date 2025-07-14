@@ -10,4 +10,3 @@ if (interactive() && Sys.getenv("RSTUDIO") == "1") {
   message("✅ Working directory set to: ", getwd())
 }
 EOF
-Updated postBuild to resolve the build failure
