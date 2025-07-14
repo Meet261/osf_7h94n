@@ -1,4 +1,12 @@
 #!/bin/bash
 
-# An attempt to run R and set the working directory at image build time
-Rscript -e 'setwd("/home/jovyan/7h94n_src/MalawiEarlyHumanChronology/Malawi"); cat("📁 Build-time working directory set to: ", getwd(), "\n")'
+# Set the desired working directory path inside the container
+TARGET_DIR="/home/jovyan/7h94n_src/MalawiEarlyHumanChronology/Malawi"
+
+# Create the .Rprofile file with working directory logic
+cat <<EOF > /home/rstudio/.Rprofile
+if (interactive() && Sys.getenv("RSTUDIO") == "1") {
+  try(setwd("$TARGET_DIR"), silent = TRUE)
+  message("✅ Working directory set to: ", getwd())
+}
+EOF
