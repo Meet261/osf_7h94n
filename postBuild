@@ -4,9 +4,10 @@
 TARGET_DIR="/home/jovyan/7h94n_src/MalawiEarlyHumanChronology/Malawi"
 
 # Create the .Rprofile file with working directory logic
-cat <<EOF > /home/rstudio/.Rprofile
+cat <<EOF > /home/jovyan/.Rprofile
 if (interactive() && Sys.getenv("RSTUDIO") == "1") {
   try(setwd("$TARGET_DIR"), silent = TRUE)
   message("✅ Working directory set to: ", getwd())
 }
 EOF
+Updated postBuild to resolve the build failure
