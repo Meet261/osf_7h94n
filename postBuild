@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# An attempt to run R and set the working directory at image build time
+Rscript -e 'setwd("/home/jovyan/7h94n_src/MalawiEarlyHumanChronology/Malawi"); cat("📁 Build-time working directory set to: ", getwd(), "\n")'
