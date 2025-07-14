@@ -1,12 +1,24 @@
 #!/bin/bash
 
-# Set the desired working directory path inside the container
-TARGET_DIR="/home/jovyan/7h94n_src/MalawiEarlyHumanChronology/Malawi"
-
 # Create the .Rprofile file with working directory logic
 cat <<EOF > /home/jovyan/.Rprofile
-if (interactive() && Sys.getenv("RSTUDIO") == "1") {
-  try(setwd("$TARGET_DIR"), silent = TRUE)
-  message("✅ Working directory set to: ", getwd())
+set_wd <- function(path) {
+  try(if (dir.exists(path)) setwd(path), silent = TRUE)
 }
+
+retry_setwd <- function(path, delay = 2, attempts = 3) {
+  attempt <- function(remaining) {
+    later::later(function() {
+      if (interactive() && Sys.getenv("RSTUDIO") == "1") {
+        set_wd(path)
+      } else if (remaining > 0) {
+        attempt(remaining - 1)
+      }
+    }, delay)
+  }
+  attempt(attempts)
+}
+
+retry_setwd("/home/jovyan/7h94n_src/MalawiEarlyHumanChronology/Malawi")
+
 EOF
