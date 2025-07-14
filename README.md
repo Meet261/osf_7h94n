@@ -19,12 +19,12 @@ The `DESCRIPTION` file was automatically added to make this project Binder-ready
 
 **Launch in your Browser:**
 
-🚀 **MyBinder:** [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/code-inspect-binder/osf_7h94n/HEAD?urlpath=rstudio)
+🚀 **MyBinder:** [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/meet261/osf_7h94n/HEAD?urlpath=rstudio)
 
    * This will launch the project in an interactive RStudio environment in your web browser.
    * Please note that Binder may take a few minutes to build the environment.
 
-🚀 **NFDI JupyterHub:** [![NFDI](https://nfdi-jupyter.de/images/nfdi_badge.svg)](https://hub.nfdi-jupyter.de/r2d/gh/code-inspect-binder/osf_7h94n/HEAD?urlpath=rstudio)
+🚀 **NFDI JupyterHub:** [![NFDI](https://nfdi-jupyter.de/images/nfdi_badge.svg)](https://hub.nfdi-jupyter.de/r2d/gh/meet261/osf_7h94n/HEAD?urlpath=rstudio)
 
    * This will launch the project in an interactive RStudio environment on the NFDI JupyterHub platform.
 
